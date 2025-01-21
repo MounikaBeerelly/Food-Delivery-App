@@ -1,0 +1,28 @@
+{
+  "name": "food-delivery-app",
+  "version": "1.0.0",
+  "description": "Food Delivery Application",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MounikaBeerelly/Food-Delivery-App.git"
+  },
+  "author": "Mounika Beerelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MounikaBeerelly/Food-Delivery-App/issues"
+  },
+  "homepage": "https://github.com/MounikaBeerelly/Food-Delivery-App#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

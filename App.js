@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
- 
+import swiggyData from './SwiggyData.json';
+
 const styleCard = {
     backgroundColor: "#f0f0f0"
 }
@@ -27,16 +28,21 @@ const HeaderComponent = () => {
 }
 
 const RestaurantCardComponent = (props) => {
+    const {resData} = props;
     return (
         <div className="res-card" style={styleCard}>
-            <img src="https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/yf0ifapaat84dsrsvvrm"
+            <img
                  alt="Burger"
                  className="res-logo"
+                 src={"https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/" + 
+                    resData?.card?.card?.info?.cloudinaryImageId
+                 }
                 />
-            <h3>{props.resName}</h3>
-            <h4>{props.cuisine}</h4>
-            <h4>4.5 stars</h4>
-            <h4>40 minutes</h4>
+            <h3>{resData?.card?.card?.info?.name}</h3>
+            <h5>{resData?.card?.card?.info?.cuisines.join(", ")}</h5>
+            <h5>{resData?.card?.card?.info?.avgRating} stars</h5>
+            <h5>{resData?.card?.card?.info?.costForTwo}</h5>
+            <h5>{resData?.card?.card?.info?.sla?.deliveryTime} minutes</h5>
         </div>
     )
 }
@@ -46,14 +52,13 @@ const BodyComponent = () => {
         <div className="body">
             <div className="search">Search</div>
             <div className="res-container">
-                <RestaurantCardComponent 
-                    resName="Burger King"
-                    cuisine="Burger, Pizza, Chinese"
-                 />
-                <RestaurantCardComponent
-                    resName="KFC"
-                    cuisine="Burger, KFC, Wings"
-                 />
+                {swiggyData?.data?.cards?.map(
+                    restaurant => 
+                        <RestaurantCardComponent 
+                            key = {restaurant?.card?.card?.info?.id}
+                            resData = {restaurant} 
+                        />
+                )}
             </div>
         </div>
     )

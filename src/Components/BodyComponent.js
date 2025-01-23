@@ -1,14 +1,29 @@
-import React from "react";
+import React, {useState} from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantCardComponent from "./RestaurantCardComponent";
 import swiggyData from '../SwiggyData.json';
 
 const BodyComponent = () => {
+    // state variable
+    const [listOfRestaurants, setListOfRestaurants] = useState(swiggyData?.data?.cards);
+
     return (
         <div className="body">
-            <div className="search">Search</div>
+            <div className="filter">
+                <button 
+                    className="filter-btn"
+                    onClick={() => {
+                        const filteredList = listOfRestaurants?.filter(
+                            res => res?.card?.card?.info?.avgRating > 4
+                        );
+                        setListOfRestaurants(filteredList);
+                    }}
+                >
+                    Top Rated Restaurants
+                </button>
+            </div>
             <div className="res-container">
-                {swiggyData?.data?.cards?.map(
+                {listOfRestaurants?.map(
                     restaurant => 
                         <RestaurantCardComponent 
                             key = {restaurant?.card?.card?.info?.id}

@@ -21,6 +21,7 @@ const RestaurantCardComponent = (props) => {
             <h5>{resData?.card?.card?.info?.cuisines.join(", ")}</h5>
             <h5>{resData?.card?.card?.info?.avgRating} stars</h5>
             <h5>{resData?.card?.card?.info?.costForTwo}</h5>
+            <h4>₹{costForTwo / 100} FOR TWO</h4>
             <h5>{resData?.card?.card?.info?.sla?.deliveryTime} minutes</h5>
         </div>
     )

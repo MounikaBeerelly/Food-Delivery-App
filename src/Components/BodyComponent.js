@@ -21,6 +21,16 @@ const BodyComponent = () => {
                 >
                     Top Rated Restaurants
                 </button>
+                <button
+                    className="distance-res"
+                    onClick={() => {
+                        const filterDistance = listOfRestaurants?.filter(
+                            res => res?.card?.card?.info?.sla?.deliveryTime < 20
+                        );
+                        setListOfRestaurants(filterDistance);
+                    }}>
+                    Less Distance Restaurants
+                </button>
             </div>
             <div className="res-container">
                 {listOfRestaurants?.map(

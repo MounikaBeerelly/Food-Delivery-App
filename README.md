@@ -31,5 +31,6 @@
 - loads the app -> make api call -> render the data
 - loads the app -> render the app -> make api call -> render the data
 - ***CORs policy*** - the browser blocks calling api in local
+    - add corsproxy `https://corsproxy.io/?` before the api call, fix the cors issue.
 - ***Conditional Rendering*** - Renders the data based on the condition.
 

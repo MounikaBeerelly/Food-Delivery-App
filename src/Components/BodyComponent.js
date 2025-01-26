@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantCardComponent from "./RestaurantCardComponent";
 import ShimmerComponent from "./ShimmerComponent";
+import { Link } from "react-router-dom";
 
 const BodyComponent = () => {
     // state variable
@@ -80,12 +81,14 @@ const BodyComponent = () => {
             </div>
             <div className="res-container">
                 {filteredRestaurantData?.map(
-                    restaurant => 
-                        <RestaurantCardComponent 
-                            key = {restaurant?.card?.card?.info?.id}
-                            resData = {restaurant} 
-                        />
-                )}
+                    restaurant => (
+                        <Link to={"/restaurants/" + restaurant?.card?.card?.info?.id}>
+                            <RestaurantCardComponent 
+                                key = {restaurant?.card?.card?.info?.id}
+                                resData = {restaurant} 
+                            />
+                        </Link>
+               ) )}
             </div>
         </div>
     )

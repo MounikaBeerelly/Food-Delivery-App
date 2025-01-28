@@ -9,15 +9,15 @@ const styleCard = {
 const RestaurantCardComponent = (props) => {
     const {resData} = props;
     return (
-        <div className="res-card" style={styleCard}>
+        <div className="m-2 p-2 w-[250px] rounded-lg h-[400px] bg-gray-100 hover:bg-gray-200">
             <img
                  alt="Burger"
-                 className="res-logo"
+                 className="rounded-lg h-28 w-60"
                  src={CDN_URL + 
                     resData?.card?.card?.info?.cloudinaryImageId
                  }
                 />
-            <h3>{resData?.card?.card?.info?.name}</h3>
+            <h3 className="font-bold py-2 text-lg">{resData?.card?.card?.info?.name}</h3>
             <h5>{resData?.card?.card?.info?.cuisines.join(", ")}</h5>
             <h5>{resData?.card?.card?.info?.avgRating} stars</h5>
             <h5>{resData?.card?.card?.info?.costForTwo}</h5>

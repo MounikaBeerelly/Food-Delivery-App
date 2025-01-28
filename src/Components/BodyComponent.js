@@ -39,18 +39,18 @@ const BodyComponent = () => {
         <ShimmerComponent /> 
     ) : (
         <div className="body">
-            <div className="filter">
-                <div className="search">
+            <div className="flex">
+                <div className="search m-4 p-4">
                     <input 
                         type="text" 
-                        className="search-box"
+                        className="border border-solid border-black"
                         value = {searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }}
                     />
                     <button 
-                        className="search-btn"
+                        className="px-4 py-2 bg-green-100 m-4 rounded-lg"
                         // filter the restaurant cards and update the UI
                         // search text
                         onClick={() => {
@@ -64,8 +64,9 @@ const BodyComponent = () => {
                         Search
                     </button>
                 </div>
+                <div className="button p-4 m-4 flex items-center">
                 <button 
-                    className="filter-btn"
+                    className="px-4 py-2 mr-9 bg-gray-100 rounded-lg"
                     onClick={() => {
                         const filteredList = listOfRestaurants?.filter(
                             res => res?.card?.card?.info?.avgRating > 4
@@ -76,7 +77,7 @@ const BodyComponent = () => {
                     Top Rated Restaurants
                 </button>
                 <button
-                    className="distance-res"
+                    className="px-4 py-2 bg-blue-50 rounded-lg"
                     onClick={() => {
                         const filterDistance = listOfRestaurants?.filter(
                             res => res?.card?.card?.info?.sla?.deliveryTime < 30
@@ -85,8 +86,9 @@ const BodyComponent = () => {
                     }}>
                     Less Distance Restaurants
                 </button>
+                </div>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {filteredRestaurantData?.map(
                     restaurant => (
                         <Link to={"/restaurants/" + restaurant?.card?.card?.info?.id}>

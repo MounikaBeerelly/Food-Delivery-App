@@ -40,3 +40,13 @@
 2. useEffect() hook
 3. useParams() hook
 4.
+
+## CSS Libraries:
+1. Internal Styling (normal CSS)
+2. SASS(Syntatically Awesome Style Sheets) & SCSS()
+3. Styled-components : `https://styled-components.com`
+4. Bootstrap
+5. Material UI : very popular react UI library
+6. Chakra UI
+6. Ant design Library
+7. Tailwind CSS

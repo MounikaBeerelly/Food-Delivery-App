@@ -34,4 +34,9 @@
     - add corsproxy `https://corsproxy.io/?` before the api call, fix the cors issue.
 - ***Conditional Rendering*** - Renders the data based on the condition.
 
-
+## Hooks: 
+- Hooks are like utility functions.
+1. useState() hook
+2. useEffect() hook
+3. useParams() hook
+4.

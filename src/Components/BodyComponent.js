@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import RestaurantCardComponent from "./RestaurantCardComponent";
 import ShimmerComponent from "./ShimmerComponent";
 import { Link } from "react-router-dom";
+import useOnileStatus from "../utils/useOnlineStatus";
 
 const BodyComponent = () => {
     // state variable
@@ -28,6 +29,12 @@ const BodyComponent = () => {
     //     return <ShimmerComponent />
     // }
 
+    // custom hook 
+
+    const onlineStatus = useOnileStatus();
+
+    if(onlineStatus === false) return <h1> Looks like you are offline!! Please check your internet connection.</h1>
+    
     return listOfRestaurants.length === 0 ? (
         <ShimmerComponent /> 
     ) : (

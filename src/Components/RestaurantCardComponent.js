@@ -9,7 +9,7 @@ const styleCard = {
 const RestaurantCardComponent = (props) => {
     const {resData} = props;
     return (
-        <div className="m-2 p-2 w-[250px] rounded-lg h-[400px] bg-gray-100 hover:bg-gray-200">
+        <div className="m-2 p-2 w-[230px] rounded-lg h-[400px] bg-gray-100 hover:bg-gray-200">
             <img
                  alt="Burger"
                  className="rounded-lg h-28 w-60"
@@ -23,7 +23,22 @@ const RestaurantCardComponent = (props) => {
             <h5>{resData?.card?.card?.info?.costForTwo}</h5>
             <h5>{resData?.card?.card?.info?.sla?.deliveryTime} minutes</h5>
         </div>
-    )
-}
+    );
+};
+
+// HOC: input - RestaurantCardComponent => RestaurantPromotedComponent
+
+export const withPromotedLabel = (RestaurantCardComponent) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
+                    Promoted
+                </label>
+                <RestaurantCardComponent {...props}/>
+            </div>
+        );
+    };
+};
 
 export default RestaurantCardComponent;

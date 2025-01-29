@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import RestaurantCardComponent, { withPromotedLabel } from "./RestaurantCardComponent";
 import ShimmerComponent from "./ShimmerComponent";
 import { Link } from "react-router-dom";
 import useOnileStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 
 const BodyComponent = () => {
     // state variable
@@ -12,6 +13,8 @@ const BodyComponent = () => {
     const [searchText, setSearchText] = useState("");
 
     const RestaurantCardPromoted = withPromotedLabel(RestaurantCardComponent);
+
+    const {loggedInUser, setUserName} = useContext(UserContext);
 
     useEffect(() => {
         fetchData();
@@ -89,6 +92,17 @@ const BodyComponent = () => {
                     Less Distance Restaurants
                 </button>
                 </div>
+                <div className="search m-8 p-4 items-center">
+                    <label>UserName : </label>
+                    <input 
+                        type="text" 
+                        className="border border-solid border-black"
+                        value = {loggedInUser}
+                        onChange={(e) => {
+                            setUserName(e.target.value);
+                        }}
+                    />
+                    </div>
             </div>
             <div className="flex flex-wrap">
                 {filteredRestaurantData?.map(

@@ -39,7 +39,7 @@ class UserClassComponent extends React.Component {
     render() {
         // console.log(this.props.name + "Child Rendered");
 
-        const {login, location, html_url} = this.state.userInfo;
+        const {login, location, avatar_url, html_url} = this.state.userInfo;
         const { count } = this.state;
 
         return (
@@ -52,6 +52,7 @@ class UserClassComponent extends React.Component {
                     })
                 }
             }>Increment Count</button>
+            <img src={avatar_url} />
             <h2>Name: {login}</h2>
             <h3>Location: {location}</h3>
             <h4>Contact: {html_url}</h4>

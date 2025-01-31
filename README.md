@@ -50,3 +50,19 @@
 6. Chakra UI
 6. Ant design Library
 7. Tailwind CSS
+
+## State Management Libraries
+1. Redux 
+     - Application become easy to debug
+2. Zustand
+3. MobX
+
+## Redux Toolkit
+
+  - install libraries `@reduxjs/toolkit and react-redux`
+  - Build our store
+  - Connect our store to our app
+  - Create slice (cartSlice)
+  - dispatch (action)
+  - Selector
+  

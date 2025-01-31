@@ -8,18 +8,20 @@ const styleCard = {
 }
 
 const RestaurantCardComponent = (props) => {
-    const {resData} = props;
-    const {loggedInUser} = useContext(UserContext);
+    const { resData } = props;
+    const { loggedInUser } = useContext(UserContext);
 
     return (
-        <div className="m-2 p-2 w-[230px] rounded-lg h-[400px] bg-gray-100 hover:bg-gray-200">
+        <div
+            data-testId="resCard"
+            className="m-2 p-2 w-[230px] rounded-lg h-[400px] bg-gray-100 hover:bg-gray-200">
             <img
-                 alt="Burger"
-                 className="rounded-lg h-28 w-60"
-                 src={CDN_URL + 
+                alt="Burger"
+                className="rounded-lg h-28 w-60"
+                src={CDN_URL +
                     resData?.card?.card?.info?.cloudinaryImageId
-                 }
-                />
+                }
+            />
             <h3 className="font-bold py-2 text-lg">{resData?.card?.card?.info?.name}</h3>
             <h4>{resData?.card?.card?.info?.cuisines.join(", ")}</h4>
             <h4>{resData?.card?.card?.info?.avgRating} stars</h4>
@@ -39,7 +41,7 @@ export const withPromotedLabel = (RestaurantCardComponent) => {
                 <label className="absolute bg-black text-white m-2 p-2 rounded-lg">
                     Promoted
                 </label>
-                <RestaurantCardComponent {...props}/>
+                <RestaurantCardComponent {...props} />
             </div>
         );
     };

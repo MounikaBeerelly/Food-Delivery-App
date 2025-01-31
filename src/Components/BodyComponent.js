@@ -48,6 +48,7 @@ const BodyComponent = () => {
                 <div className="search m-4 p-4">
                     <input 
                         type="text" 
+                        data-testid="searchInput"
                         className="border border-solid border-black"
                         value = {searchText}
                         onChange={(e) => {
@@ -76,7 +77,7 @@ const BodyComponent = () => {
                         const filteredList = listOfRestaurants?.filter(
                             res => res?.card?.card?.info?.avgRating > 4
                         );
-                        setListOfRestaurants(filteredList);
+                        setFilteredRestaurantData(filteredList);
                     }}
                 >
                     Top Rated Restaurants
@@ -87,7 +88,7 @@ const BodyComponent = () => {
                         const filterDistance = listOfRestaurants?.filter(
                             res => res?.card?.card?.info?.sla?.deliveryTime < 30
                         );
-                        setListOfRestaurants(filterDistance);
+                        setFilteredRestaurantData(filterDistance);
                     }}>
                     Less Distance Restaurants
                 </button>

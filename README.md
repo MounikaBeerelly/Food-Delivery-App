@@ -66,3 +66,20 @@
   - dispatch (action)
   - Selector
   
+
+  ## Top UI Libraries:
+
+  - A UI library is a collection of pre-built reusable components.
+  - It saves time by providing ready-to-use components.
+  - It allow customization to fit your project.
+  Optimized for speed and responsiveness.
+  1. **Shadcn UI** (https://www.ui.shadcn.com)
+    - It's a great choice if you want to create highly customizable, unstyled components.
+  2. **Tailwind UI** (https://www.tailwindui.com)
+    - Helps to create unique UIs without writing custom css.
+  3. **Hero UI** (https://www.heroui.com)
+    - Beautiful, fast UI components for React & best suited for elegant, smooth UI designs.
+ 4. **Geist UI** (https://www.geist-ui.dev)
+    - It works seamlessly wiith Next.js. Ideal for modern, clean web applications.
+ 5. **Mantine** (https://www.mantine.dev)
+    - Rich set of flexible, customizable components. Good for building dashboards.
